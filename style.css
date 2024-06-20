@@ -1,0 +1,28 @@
+.screen {
+                width: 1024px;
+                height: 768px;
+                padding: 10px;
+                background-color: blue;
+            }
+            .text-20 {
+                font-size: 20px;
+                color: red;
+            }.text-18 {
+                font-size: 18px;
+                color: green;
+            }.button-500-50 {
+                background-color: red;
+                width: 500px;
+                height: 50px;
+                margin: 10px;
+                padding: 10px;
+            }.button-150-40 {
+                background-color: green;
+                width: 150px;
+                height: 40px;
+                margin: 5px;
+                padding: 5px;
+            }.image-200-200 {
+                width: 200px;
+                height: 200px;
+            }
