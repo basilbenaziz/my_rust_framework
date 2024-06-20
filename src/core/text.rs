@@ -7,6 +7,14 @@ pub struct Text {
 }
 
 impl Text {
+    pub fn new(text: &str, font_size: u32, color: Color) -> Self {
+        Self {
+            text: text.to_string(),
+            font_size,
+            color,
+        }
+    }
+
     pub fn render_html(&self) -> String {
         format!("<p class=\"text-{}\">{}</p>", self.font_size, self.text)
     }

@@ -1,11 +1,89 @@
 <!DOCTYPE html>
-            <html>
+            <html lang="en">
             <head>
+                <meta charset="UTF-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
                 <link rel="stylesheet" type="text/css" href="style.css">
+                <style>
+                    body {
+                        margin: 0;
+                        font-family: Arial, sans-serif;
+                    }
+                    .screen {
+                        width: 1024px;
+                        height: 768px;
+                        padding: 10px;
+                        background-color: blue;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        justify-content: center;
+                        margin: auto;
+                        box-sizing: border-box;
+                    }
+                    @media screen and (max-width: 768px) {
+                .screen {
+                    width: 100%;
+                    height: auto;
+                    padding: 5px;
+                }
+            }
+            @media screen and (min-width: 768px) {
+                .screen {
+                    width: 1024px;
+                    height: 768px;
+                    padding: 10px;
+                }
+            }
+            .text-20 {
+                font-size: 20px;
+                color: red;
+            }.text-18 {
+                font-size: 18px;
+                color: green;
+            }.button-500-50 {
+                background-color: red;
+                width: 500px;
+                height: 50px;
+                margin: 0px;
+                padding: 0px;
+                max-width: 100%;
+                box-sizing: border-box;
+            }.button-150-40 {
+                background-color: green;
+                width: 150px;
+                height: 40px;
+                margin: 5px;
+                padding: 5px;
+                max-width: 100%;
+                box-sizing: border-box;
+            }.image-200-200 {
+                width: 200px;
+                height: 200px;
+                margin: 0px;
+                padding: 0px;
+                max-width: 100%;
+                box-sizing: border-box;
+            }.input-300-40 {
+                width: 300px;
+                height: 40px;
+                margin: 0px;
+                padding: 0px;
+                max-width: 100%;
+                box-sizing: border-box;
+            }.textarea-300-100 {
+                width: 300px;
+                height: 100px;
+                margin: 0px;
+                padding: 0px;
+                max-width: 100%;
+                box-sizing: border-box;
+            }
+                </style>
             </head>
             <body>
                 <div class="screen">
-                    <p class="text-20">Hello World</p><p class="text-18">Welcome to Rust</p><button class="button-500-50">Click Me</button><button class="button-150-40">Submit</button><img class="image-200-200" src="path/to/image.png" alt="An example image" />
+                    <p class="text-20">Hello World</p><p class="text-18">Welcome to Rust</p><button class="button-500-50">Click Me</button><button class="button-150-40">Submit</button><img class="image-200-200" src="https://example.com/path/to/image.png" alt="An example image" /><input type="text" placeholder="Enter your name" value="" class="input-300-40" /><textarea placeholder="Enter your message" class="textarea-300-100"></textarea><label><input type="checkbox" > Accept terms and conditions</label>
                 </div>
             </body>
             </html>

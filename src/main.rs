@@ -1,52 +1,40 @@
-// src/main.rs
-
 mod core;
 
-use core::{Color, Element, Screen, Button, Text, Image};
+use core::{Color, Element, Screen};
+use core::text::Text;
+use core::button::Button;
+use core::image::Image;
+use core::input::Input;
+use core::textarea::TextArea;
+use core::checkbox::Checkbox;
 
 fn main() {
-    Screen {
+    let screen = Screen {
         elements: vec![
-            Element::Text(Text {
-                text: "Hello World".to_string(),
-                font_size: 20,
-                color: Color::Red,
-            }),
-            Element::Text(Text {
-                text: "Welcome to Rust".to_string(),
-                font_size: 18,
-                color: Color::Green,
-            }),
-            Element::Button(Button {
-                text: "Click Me".to_string(),
-                background_color: Color::Red,
-                width: 500,
-                height: 50,
-                margin: 0,
-                padding: 0,
-            }
-            .padding(10)
-            .margin(10)),
-            Element::Button(Button {
-                text: "Submit".to_string(),
-                background_color: Color::Green,
-                width: 150,
-                height: 40,
-                margin: 0,
-                padding: 0,
-            }
-            .padding(5)
-            .margin(5)),
-            Element::Image(Image {
-                src: "path/to/image.png".to_string(),
-                width: 200,
-                height: 200,
-                alt: "An example image".to_string(),
-            }),
+            Element::Text(Text::new("Hello World", 20, Color::Red)),
+
+            Element::Text(Text::new("Welcome to Rust", 18, Color::Green)),
+
+            Element::Button(Button::new("Click Me", Color::Red, 500, 50)),
+
+            Element::Button(Button::new("Submit", Color::Green, 150, 40)
+                        .padding(5)
+                        .margin(5)),
+
+            Element::Image(Image::new("https://example.com/path/to/image.png", 200, 200, "An example image")),
+
+            Element::Input(Input::new("text", "Enter your name", "", 300, 40)),
+
+            Element::TextArea(TextArea::new("Enter your message", "", 300, 100)),
+
+            Element::Checkbox(Checkbox::new("Accept terms and conditions", false)),
+
         ],
         width: 1024,
         height: 768,
         padding: 10,
         background_color: Color::Blue,
-    }.save_files();
+    };
+
+    screen.save_files();
 }

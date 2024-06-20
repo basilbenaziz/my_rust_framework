@@ -1,19 +1,21 @@
 use crate::core::color::Color;
 
-pub struct Button {
-    pub text: String,
-    pub background_color: Color,
+pub struct Input {
+    pub input_type: String,
+    pub placeholder: String,
+    pub value: String,
     pub width: u32,
     pub height: u32,
     pub margin: u32,
     pub padding: u32,
 }
 
-impl Button {
-    pub fn new(text: &str, background_color: Color, width: u32, height: u32) -> Self {
+impl Input {
+    pub fn new(input_type: &str, placeholder: &str, value: &str, width: u32, height: u32) -> Self {
         Self {
-            text: text.to_string(),
-            background_color,
+            input_type: input_type.to_string(),
+            placeholder: placeholder.to_string(),
+            value: value.to_string(),
             width,
             height,
             margin: 0,
@@ -33,15 +35,14 @@ impl Button {
 
     pub fn render_html(&self) -> String {
         format!(
-            "<button class=\"button-{}-{}\">{}</button>",
-            self.width, self.height, self.text
+            "<input type=\"{}\" placeholder=\"{}\" value=\"{}\" class=\"input-{}-{}\" />",
+            self.input_type, self.placeholder, self.value, self.width, self.height
         )
     }
 
     pub fn render_css(&self) -> String {
         format!(
-            ".button-{}-{} {{
-                background-color: {};
+            ".input-{}-{} {{
                 width: {}px;
                 height: {}px;
                 margin: {}px;
@@ -49,7 +50,7 @@ impl Button {
                 max-width: 100%;
                 box-sizing: border-box;
             }}",
-            self.width, self.height, self.background_color.to_css(), self.width, self.height, self.margin, self.padding
+            self.width, self.height, self.width, self.height, self.margin, self.padding
         )
     }
 }

@@ -1,13 +1,19 @@
 pub mod button;
+pub mod checkbox;
 pub mod color;
 pub mod element;
 pub mod image;
+pub mod input;
 pub mod screen;
+pub mod textarea;
 pub mod text;
 
 pub use button::Button;
+pub use checkbox::Checkbox;
 pub use color::Color;
 pub use element::Element;
 pub use image::Image;
+pub use input::Input;
 pub use screen::Screen;
+pub use textarea::TextArea;
 pub use text::Text;
